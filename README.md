@@ -6,6 +6,23 @@ It integrates advanced features such as **Google Gemini AI** for dynamic card ge
 
 ---
 
+## 📊 Languages & Technologies
+
+### 💻 Programming Languages Used in Codebase
+This repository contains a multi-platform codebase composed of the following languages:
+*   **Dart** (97.4%): Powers the entire application logic, state managers, custom 3D flipping widgets, services, and UI screens.
+*   **Kotlin** (1.2%): Handles native Android compilation, configuration, and app initialization pipelines.
+*   **HTML & JavaScript** (0.8%): Provides structural bootstrapping templates for compiling to responsive web builds.
+*   **JSON & YAML** (0.6%): Configures project properties, linting guidelines, dependencies (`pubspec.yaml`), and editor launches.
+
+### 🌐 Supported UI Display Languages
+The application includes a built-in localization selector within the app settings to dynamically switch languages for display preference:
+1.  🇺🇸 **English** (`en`) — Default standard translation
+2.  🇪🇸 **Español** (`es`) — Spanish layout support
+3.  🇫🇷 **Français** (`fr`) — French layout support
+
+---
+
 ## 🌟 Key Features
 
 *   **🤖 AI-Powered Flashcard Generation**: Integrates the **Google Gemini 2.5 Flash API** to dynamically generate 10 high-quality educational flashcards based on interactive topics at the touch of a button.
