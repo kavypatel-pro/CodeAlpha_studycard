@@ -1,142 +1,164 @@
-# CodeAlpha StudyCard App 📱✨
+# 📚 StudyCards
 
-A state-of-the-art, feature-rich Flashcard Study application built with **Flutter** and **Material Design 3**. This project was developed as a submission for the **CodeAlpha Internship** and is fully polished, optimized, and ready for evaluation.
+**Flutter** • **Dart** • **Material Design 3** • **Google Gemini AI**
 
-It integrates advanced features such as **Google Gemini AI** for dynamic card generation, a local study statistics dashboard, customizable multi-color themes (Light/Dark mode), and custom category management.
+A modern, premium, and feature-rich Flutter flashcard learning application developed to help students study more effectively. StudyCards enables users to create, organize, and review custom flashcards with a clean interface, local data storage, multi-state authentication, dynamic AI card generation, study stats tracking, and customizable color schemes.
+
+This project was built and fully polished as a submission for the **CodeAlpha Internship** program.
 
 ---
 
-## 📊 Languages & Technologies
+# 📱 App Highlights & UI Preview
 
-### 💻 Programming Languages Used in Codebase
-This repository contains a multi-platform codebase composed of the following languages:
-*   **Dart** (97.4%): Powers the entire application logic, state managers, custom 3D flipping widgets, services, and UI screens.
-*   **Kotlin** (1.2%): Handles native Android compilation, configuration, and app initialization pipelines.
+| Welcome Screen | Home Screen | Flashcard Study |
+| :---: | :---: | :---: |
+| ![Welcome Screen](screenshots/welcome.png) | ![Home Screen](screenshots/home.png) | ![Flashcard Study Screen](screenshots/study.png) |
+
+| Categories | Profile | Dark Mode |
+| :---: | :---: | :---: |
+| ![Categories Screen](screenshots/categories.png) | ![Profile Screen](screenshots/profile.png) | ![Dark Mode Screen](screenshots/dark_mode.png) |
+
+---
+
+# 📊 Codebase & Localization Languages
+
+### 💻 Development Languages Used
+The repository is composed of the following programming and configuration languages:
+*   **Dart** (97.4%): Powers the entire application views, providers, 3D animations, custom graphs, and database managers.
+*   **Kotlin** (1.2%): Handles native compiler configurations and Android initialization.
 *   **HTML & JavaScript** (0.8%): Provides structural bootstrapping templates for compiling to responsive web builds.
-*   **JSON & YAML** (0.6%): Configures project properties, linting guidelines, dependencies (`pubspec.yaml`), and editor launches.
+*   **JSON & YAML** (0.6%): Controls editor settings, analysis/lint rules, and pub packages configuration.
 
-### 🌐 Supported UI Display Languages
-The application includes a built-in localization selector within the app settings to dynamically switch languages for display preference:
-1.  🇺🇸 **English** (`en`) — Default standard translation
-2.  🇪🇸 **Español** (`es`) — Spanish layout support
-3.  🇫🇷 **Français** (`fr`) — French layout support
-
----
-
-## 🌟 Key Features
-
-*   **🤖 AI-Powered Flashcard Generation**: Integrates the **Google Gemini 2.5 Flash API** to dynamically generate 10 high-quality educational flashcards based on interactive topics at the touch of a button.
-*   **📊 Study Statistics & Analytics**: Track your learning progress with a dedicated stats dashboard displaying total study sessions, cards reviewed, cards mastered, and an interactive **daily streak tracker**.
-*   **🎨 Premium Custom Theming**: Full Material 3 implementation featuring elegant Light and Dark modes. Includes four curated preset color schemes:
-    *   `Purple` (Deep Purple)
-    *   `Sunset` (Deep Orange)
-    *   `Ocean` (Teal)
-    *   `Forest` (Emerald Green)
-*   **📁 Custom Category Management (CRUD)**: Create, edit, and delete topics. Select custom colors and icons for each category. Dynamic cards automatically reassign to standard categories when their original category is deleted.
-*   **💾 Local Storage Persistence**: Seamlessly saves your custom flashcards, custom categories, auth session, theme mode, and study statistics locally using a serialized JSON database model built over `SharedPreferences`.
-*   **🔒 Auth & User Profiles**: Complete Mock authentication flow supporting SignUp, Login, Forgot Password, and a quick "Continue as Guest" mode, complete with subscription tiers (`Basic`, `Plus`, `Pro`).
-*   **✨ Advanced UI/UX & Animations**: Smooth card-flipping micro-animations using custom widgets, animated progress bars, responsive layouts, and modern visual styling.
+### 🌐 Display UI Languages Supported
+The application includes a built-in localization dropdown within Settings to dynamically translate layout text:
+1.  🇺🇸 **English** (`en`)
+2.  🇪🇸 **Español** (`es`)
+3.  🇫🇷 **Français** (`fr`)
 
 ---
 
-## 🛠️ Technology Stack & Libraries
+# ✨ Features
 
-*   **Framework**: [Flutter SDK](https://flutter.dev) (v3.44.2+)
-*   **Language**: [Dart](https://dart.dev) (v3.12.2+)
-*   **State Management**: `provider` (MultiProvider architecture for global access to Auth, Study, and Theme states)
-*   **Local Database**: `shared_preferences`
-*   **API Client**: `http` (configured with exponential backoff and rate-limit retries)
-*   **Configuration**: `flutter_dotenv` (for secure API key storage)
+*   📖 **Interactive Flashcards** – Study one flashcard at a time with question-and-answer format.
+*   🔄 **Card Navigation** – Move through flashcards using Previous and Next buttons.
+*   👁️ **Show Answer** – Reveal answers with a single tap and enjoy a smooth 3D card flip animation.
+*   🤖 **AI-Generated Decks** – Fetch dynamically generated educational decks from the **Google Gemini 2.5 Flash API** on any topic.
+*   ➕ **Create Flashcards** – Add your own flashcards for personalized learning.
+*   ✏️ **Edit Flashcards** – Modify existing flashcards anytime.
+*   🗑️ **Delete Flashcards** – Remove unwanted flashcards easily.
+*   🗂️ **Categories** – Organize flashcards into custom categories with customizable icon codes and colors.
+*   🔍 **Search & Filters** – Quickly find flashcards by query or filter by Category and Favorites.
+*   👤 **Authentication** – Login, Sign Up, or Continue as Guest with persistent profiles and tier modes (`Basic`, `Plus`, `Pro`).
+*   🌗 **Dark & Light Mode** – Switch between themes with saved preferences and customized color accents (Purple, Sunset, Ocean, Forest).
+*   💾 **Offline Support** – Store flashcards, study history, preferences, and custom category decks locally for offline access.
+*   📊 **Learning Progress Dashboard** – Track total sessions, total reviews, mastered cards, and daily study streaks.
+*   🎨 **Modern Material 3 UI** – Fully responsive layout built using modern Material 3 tokens, seed colors, and custom widgets.
 
 ---
 
-## 📂 Project Architecture
+# 🛠️ Technologies & Libraries Used
 
-```text
-StudyCards APP/
-├── lib/
-│   ├── main.dart                       # App bootstrapper, MultiProvider setup, and theme router
-│   ├── models/
-│   │   ├── category.dart               # Category data model and icon/color serializations
-│   │   ├── flashcard.dart              # Flashcard model with copyWith and JSON parsers
-│   │   └── study_stats.dart            # Analytics stats & daily streak calculation model
-│   ├── providers/
-│   │   ├── auth_provider.dart          # Manages login/signup, profiles, and guest access sessions
-│   │   ├── study_provider.dart         # Core provider managing CRUD, API sync, and analytics
-│   │   └── theme_provider.dart         # Controls Light/Dark toggles and the seed color palettes
-│   ├── screens/
-│   │   ├── auth/                       # Authentication screens (Login, SignUp, Welcome)
-│   │   ├── categories/                 # Custom Categories management dashboard
-│   │   ├── flashcards/                 # Study dashboard, swipe/flip study cards, and CRUD forms
-│   │   ├── profile/                    # User settings, sub upgrades, and profile dashboard
-│   │   └── statistics/                 # Analytics graphs and learning progress tracker
-│   ├── services/
-│   │   ├── flashcard_api_service.dart  # Gemini 2.5 API service with exponential backoff
-│   │   └── storage_service.dart        # JSON-based SharedPreferences storage manager
-│   └── widgets/
-│       └── flip_card_widget.dart       # High-performance 3D-rotation card-flipping widget
-├── test/
-│   └── widget_test.dart                # Widget smoke tests validating rendering and timers
-├── .env                                # Local environment secrets config (API Keys)
-├── pubspec.yaml                        # Project assets, dependencies, and environment config
-└── README.md                           # Documentation & Evaluator setup guide
+The project is built using modern Flutter development practices:
+*   **Flutter & Dart** – Cross-platform application framework and programming language.
+*   **Provider** – Efficient MultiProvider configuration for managing auth, study, and theme states.
+*   **SharedPreferences** – High-performance local storage manager utilizing serialized JSON structures.
+*   **flutter_dotenv** – Secure local environment configuration for API secret keys.
+*   **http** – Robust REST client handling network queries with exponential backoff retries.
+*   **Material Design 3** – Fluid UI design styling using HSL color seeds.
+*   **GitHub Actions** – Fully integrated CI workflow to run static analysis and unit testing on every push.
+
+---
+
+# ⚙️ Installation & Setup
+
+## Prerequisites
+
+*   Flutter SDK (v3.22 or later recommended, compiled on stable v3.44.2)
+*   Android Studio or VS Code
+*   Flutter and Dart extensions
+*   Android Emulator, physical Android device, or Chrome browser
+
+---
+
+# 🚀 Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/kavypatel-pro/CodeAlpha_studycard.git
+cd CodeAlpha_studycard
+```
+
+### 2. Install Dependencies
+```bash
+flutter pub get
+```
+
+### 3. Setup Environment Secrets
+Create a `.env` file in the root directory and add your Google Gemini API Key:
+```env
+FLASHCARD_API_KEY=your_google_gemini_api_key_here
+```
+
+### 4. Run Automated Analysis & Tests
+Verify that compilation is clean and all tests pass:
+```bash
+flutter analyze
+flutter test
+```
+
+### 5. Run the Application
+```bash
+flutter run
 ```
 
 ---
 
-## ⚙️ Setup & Installation
+# 📁 Project Structure
 
-### Prerequisites
-1.  Install the **Flutter SDK** (compatible with v3.22.0 up to the latest v3.44.2 stable release).
-2.  Set up an emulator or connect a physical development device.
-3.  Obtain a free **Google Gemini API Key** from [Google AI Studio](https://aistudio.google.com/).
-
-### Installation Steps
-
-1.  **Clone the Repository**:
-    ```bash
-    git clone https://github.com/kavypatel-pro/CodeAlpha_studycard.git
-    cd CodeAlpha_studycard
-    ```
-
-2.  **Install Dependencies**:
-    ```bash
-    flutter pub get
-    ```
-
-3.  **Setup Environment Secrets**:
-    Create a file named `.env` in the root directory and add your Google Gemini API Key:
-    ```env
-    FLASHCARD_API_KEY=your_gemini_api_key_here
-    ```
-
-4.  **Run Tests**:
-    Verify that all unit and widget tests pass:
-    ```bash
-    flutter test
-    ```
-
-5.  **Run the Application**:
-    ```bash
-    flutter run
-    ```
+```text
+CodeAlpha_studycard/
+│
+├── .github/              # GitHub Actions CI workflow config
+│   └── workflows/
+│       └── flutter_ci.yml
+├── android/              # Native Android gradle wrappers and settings
+├── lib/
+│   ├── models/           # Category, Flashcard, and StudyStats JSON models
+│   ├── providers/        # State managers (AuthProvider, StudyProvider, ThemeProvider)
+│   ├── screens/
+│   │   ├── auth/         # Login, Sign Up, and Welcome screens
+│   │   ├── home/         # Main study and deck selectors
+│   │   ├── flashcards/   # Flashcard Study carousel and CRUD forms
+│   │   ├── categories/   # Category creator and manager screens
+│   │   ├── profile/      # User profiles and subscription tier mocks
+│   │   ├── settings/     # Privacy policies and local language selectors
+│   │   └── statistics/   # Study sessions & daily streak progress trackers
+│   ├── services/         # StorageService and Gemini API client logic
+│   ├── widgets/          # Custom 3D FlipCardWidget and Analytics charts
+│   └── main.dart         # Setup bindings, environment initialization, and MaterialApp
+│
+├── screenshots/          # App screenshots for README preview
+├── test/                 # Widget and timer smoke tests
+├── .env.example          # Environment variables template
+└── pubspec.yaml          # Project metadata, fonts, and packages configuration
+```
 
 ---
 
-## 🧑‍🏫 Evaluation & Verification
+# 🎯 Future Improvements
 
-To verify that the application complies with all static analysis rules and runs flawlessly:
-
-1.  **Static Analysis**:
-    Ensure the codebase is 100% clean and contains zero warnings or deprecations:
-    ```bash
-    flutter analyze
-    ```
-2.  **Release Build (Web)**:
-    Build a optimized release build with full icon tree-shaking:
-    ```bash
-    flutter build web --release
-    ```
+*   ☁️ Cloud synchronization (Firebase/Supabase Integration)
+*   📤 Import and export flashcard sets (CSV/JSON support)
+*   🔔 Native system daily notifications and study alarms
+*   ⭐ Expanded interactive study mini-games (matching cards, quizzes)
 
 ---
-*Created as part of the CodeAlpha Internship program.*
+
+# 👨‍💻 Author
+
+**Kavy Patel**
+
+*   **GitHub:** [@kavypatel-pro](https://github.com/kavypatel-pro)
+*   **Project:** StudyCards – Flutter Flashcard Learning App
+*   **Role:** Flutter Developer (CodeAlpha Internship Submission)
+*   **Tech Stack:** Flutter • Dart • Provider • SharedPreferences • Material Design 3 • Gemini API
